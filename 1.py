@@ -1,3 +1,4 @@
+import time
 fichier = open('input1.txt', 'r')
 contenu = fichier.readlines()
 
@@ -78,12 +79,13 @@ def computeCalibrationValue(ligne):
 
     return int(str(first) + str(second))
 
+t1 = time.time()
 s = 0
 for ligne in contenu:
     s += computeCalibrationValue(ligne.strip())
-
+t2 = time.time()
 print(s)
-
+print(t2-t1)
 
 
 fichier.close()
